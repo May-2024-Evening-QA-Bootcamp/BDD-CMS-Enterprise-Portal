@@ -125,7 +125,7 @@ public class CommonActions {
 		}
 	}
 
-	public void scrollIntoViewUsingJavascriptExecutor(WebDriver driver, WebElement element) {
+	public static void scrollIntoViewUsingJavascriptExecutor(WebDriver driver, WebElement element) {
 		// JavascriptExecutor js = (JavascriptExecutor)driver; // instead of writing
 		// this 'js', we can write below one
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true)", element);
@@ -133,7 +133,7 @@ public class CommonActions {
 	}
 
 	// we will use it for sending value by JavascriptExecutor
-	public void usingJavascriptExecutor(WebDriver driver, String script, WebElement element) {
+	public static void usingJavascriptExecutor(WebDriver driver, String script, WebElement element) {
 		// JavascriptExecutor js = (JavascriptExecutor)driver; // instead of writing
 		// this 'js', we can write below one
 		((JavascriptExecutor) driver).executeScript(script, element);
@@ -161,7 +161,7 @@ public class CommonActions {
 	}
 
 	
-	public void inputTextThenClickTab(WebElement element, String input) {
+	public static void inputTextThenClickTab(WebElement element, String input) {
 		try {
 			element.sendKeys(input, Keys.TAB);
 			logger.info(input + " <-----> has been put into <-----> " + element + " and then clicked by Tab Key");
@@ -174,7 +174,7 @@ public class CommonActions {
 
 	
 
-	public void clearTextFromTheField(WebElement element) {
+	public static void clearTextFromTheField(WebElement element) {
 		try {
 			element.clear();
 			logger.info("The Text from the " + element + " ---> is cleared");
@@ -185,7 +185,7 @@ public class CommonActions {
 		}
 	}
 
-	public void selectElelementFromDropdownOnebyOne(WebElement element, List<WebElement> elements) {
+	public static void selectElelementFromDropdownOnebyOne(WebElement element, List<WebElement> elements) {
 		try {
 			Select select = new Select(element);
 			for (int i = 1; i < elements.size(); i++) {
@@ -201,7 +201,7 @@ public class CommonActions {
 		}
 	}
 
-	public void selectDropdown(WebElement element, String value) {
+	public static void selectDropdown(WebElement element, String value) {
 		try {
 			Select select = new Select(element);
 			select.selectByVisibleText(value);
@@ -215,7 +215,7 @@ public class CommonActions {
 
 	
 
-	public void clickElementThenTab(WebElement element) {
+	public static void clickElementThenTab(WebElement element) {
 		try {
 			element.sendKeys(Keys.TAB);
 			logger.info(element + "<---------> has been clicked, then click Tab Key");
@@ -226,7 +226,7 @@ public class CommonActions {
 		}
 	}
 
-	public void inputTextThenClickEnter(WebElement element, String input) {
+	public static void inputTextThenClickEnter(WebElement element, String input) {
 		try {
 			element.sendKeys(input, Keys.ENTER);
 			logger.info(input + " <-----> has been put into <-----> " + element + " and then clicked by Enter Key");
@@ -237,7 +237,7 @@ public class CommonActions {
 		}
 	}
 
-	public void inputTextThenClickReturn(WebElement element, String input) {
+	public static void inputTextThenClickReturn(WebElement element, String input) {
 		try {
 			element.sendKeys(input, Keys.RETURN);
 			logger.info(input + " <-----> has been put into <-----> " + element + " and then clicked by Enter Key");
@@ -266,7 +266,7 @@ public class CommonActions {
 	}
 
 	// very very important interview question
-	public String getSreenShot(String testName, WebDriver driver) {
+	public static String getSreenShot(String testName, WebDriver driver) {
 		TakesScreenshot ss = (TakesScreenshot) driver;
 		String path = System.getProperty("user.dir") + "/test-output/screenShots";
 		File folder = new File(path);
@@ -299,7 +299,7 @@ public class CommonActions {
 	 * 	
 	 * 
 	 */
-	public void switchToChildWindow(WebDriver driver, WebElement element) {
+	public static void switchToChildWindow(WebDriver driver, WebElement element) {
 		try {
 			clickElement(element);
 			Set<String> allWindowHandles = driver.getWindowHandles();
@@ -398,6 +398,8 @@ public class CommonActions {
 		element.sendKeys(file.getAbsolutePath());
 		pause(4000);		
 	}	
+	
+	
 	
 	
 

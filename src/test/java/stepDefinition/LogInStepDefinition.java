@@ -36,5 +36,17 @@ public class LogInStepDefinition extends BaseClass {
 	public void user_will_navigate_to_multi_factor_authentication_modal() {
 	    logIn.landingOnMultiFactorAuthentication();
 	}
+	
+	@When("User enter UserId as {string}")
+	public void user_enter_user_id_as(String string) {
+	    logIn.validateUserId(string);
+	}
+
+	@When("User enter Password as {string}")
+	public void user_enter_password_as(String string) {
+	    logIn.validatePassword(string);
+	}
+
+
 
 }
