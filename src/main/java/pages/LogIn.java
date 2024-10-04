@@ -55,6 +55,18 @@ public class LogIn {
 		pause(3000);
 	}
 	
+	public void validateUserId (String string) {
+		elementDisplayed(userId);
+		inputText(userId, string);
+		pause(3000);
+	}
+	
+	public void validatePassword (String string) {
+		elementDisplayed(password);
+		inputText(password, string);
+		pause(3000);
+	}
+	
 	public void validateCheckBox() {
 		elementSelected(checkBox);
 		clickElement(checkBox);
